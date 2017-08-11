@@ -1,106 +1,88 @@
-title:            Blog Title
-description:      Describe your website here.
+# Site settings
+title: "MADness"
+description: A Template for Jekyll
 
-# put your disqus here
-disqus_shortname:
-reading_time:     true # if true, shows the estimated reading time for a post
-words_per_minute: 200
-logo:             images/logo.png # logo visible in the topbar
-excerpt_separator: <!--more-->
-# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
-# When testing locally leave blank or use http://localhost:4000
+# Files
+baseurl:
+pagesdir: pages
+assets:
+  libs: assets/libs
+  owner: assets/owner
+logo: logo.png
+discus_shortname: MADness
+email: mad@ness.com
+url: "http://madforjekyll.github.io"
+search: true
+share: true
+comments: true
 
-url: http://aronbordin.com/neo-hpstr-jekyll-theme
+# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
+readtime: true
 
-# draw your top menu here
-# each item must have a title and a url.
-#   To list post categories. use type: 'categories'
-#   To create sub categories. add a submenu item
-# See the example
-menu:
-  - title: 'Home'
-    url: '/'
-  - title: 'Fork'
-    url: 'http://github.com/aron-bordin/neo-hpstr-jekyll-theme'
-  - title: 'Install'
-    url: 'http://github.com/aron-bordin/neo-hpstr-jekyll-theme#installation'
-  - title: 'Tags'
-    url: '/tags'
-  - title: 'Categories'
-    url: '/categories'
-    type: 'categories'
-  - title: 'Favorites'
-    url: '#'
-    submenu:
-      - title: 'Code Highlighter'
-        url: '/intro/code-highlighting-post/'
-      - title: 'Sample Post'
-        url: '/intro/sample-post/'
+# Specify the average Words per minute. If not defined, 180 will be used
+wpm: 200
 
 # Owner/author information
 owner:
-  name:           Your name
-  site:           http://aronbordin.com
-  avatar:         images/avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
-  # Twitter nick for use in Twitter cards and follow button.
-  twitter: aron_bordin # if no twitter in this config, the twitter follow button will be removed
-  # GitHub nick for use in follow button in author block.
-  github: aron-bordin
+  name:   MADness
+  avatar: avatar.jpg
+  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
+  description:    MAD for Jekyll
 
-# Twitter account associated with the site if different from owner/author twitter account.
-# Used in Twitter cards.
-twitter:
+# Social networking links used in footer. Update and remove as you like.
+twitter_username: MAD4Jekyll
+facebook_username: MAD4Jekyll
+github_username: MAD4Jekyll
+deviantart_username: MAD4Jekyll
+500px_username: MAD4Jekyll
+flickr_username: MAD4Jekyll
+instagram_username: MAD4Jekyll
 
-# Social networking links used in author block underneath posts. Update and remove as you like.
-social:
-  - title: "github"
-    url: "https://github.com/aron-bordin"
-  - title: "linkedin"
-    url: "https://br.linkedin.com/in/aronbordin"
-  - title: "youtube"
-    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
+ 
+# Internal nav
+nav:
+ writing: "root_url/writing/"
+ gallery: "root_url/gallery/"
+ about: "root_url/about/"
 
-# Background image to be tiled on all pages
-background:
+
+# Server
+destination:      	 ./_site
+port:             	 4000
+
+
+#dependencies
+# Gems
+gems:
+  - jekyll-paginate
+
+
+# Build settings
+highlighter:         rouge
+markdown:           kramdown
+kramdown:
+    extensions:     
+     - Hard_wrap
+     - no_intra_emphasis
+     - strikethrough
+     - fenced_code_blocks
+     - autolink
+     - tables
+     - with_toc_data
+     - highlight
+     - footnotes
+    input:          GFM
+sass:
+    style:          :compressed
+paginate: 5
+paginate_path: "/writing/page:num/"
+permalink: "/writing/:title/"
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+slugify: "pretty"
+
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:
-google_verify:
+google_analytics:   UA-xxxxxxxx-x
+google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-locale:      en_US
-future:      true
-highlighter: rouge
-markdown:    kramdown
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
-
-# Amount of post to show on home page
-paginate: 5
-
-# if true, shows the floatting share buttons
-float_share: true
-
-# Octopress
-# Default extensions
-post_ext: md
-page_ext: md
-# Found in _templates/
-post_layout: post
-page_layout: page
-# Format titles with titlecase?
-titlecase: true
-
-include: [".htaccess"]
-exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
-gems: [jekyll-paginate]
-theme: neo-hpstr-jekyll-theme
+bing_verify:         
